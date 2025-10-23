@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jmail</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="card" id="auth-card">
+        <h1>Jmail</h1>
+        <p class="tagline">Self-hosted email sender with login support.</p>
+
+        <div class="tabs">
+          <button class="tab-button active" data-target="login-form">Login</button>
+          <button class="tab-button" data-target="register-form">Sign Up</button>
+        </div>
+
+        <form id="login-form" class="form active">
+          <label>Email<input type="email" id="login-email" required /></label>
+          <label>Password<input type="password" id="login-password" required /></label>
+          <button type="submit">Login</button>
+        </form>
+
+        <form id="register-form" class="form">
+          <label>Email<input type="email" id="register-email" required /></label>
+          <label>Display Name<input type="text" id="register-display" placeholder="Optional" /></label>
+          <label>Password<input type="password" id="register-password" required /></label>
+          <button type="submit">Create Account</button>
+        </form>
+        <p id="auth-message" class="message" role="alert"></p>
+      </section>
+
+      <section class="card hidden" id="composer-card">
+        <header class="composer-header">
+          <h2>Email Composer</h2>
+          <button id="logout" class="secondary">Log out</button>
+        </header>
+        <form id="compose-form" class="form">
+          <label>To<input type="email" id="compose-to" required /></label>
+          <label>Subject<input type="text" id="compose-subject" required /></label>
+          <label>Reply-To<input type="email" id="compose-reply" placeholder="Optional" /></label>
+          <label>Message<textarea id="compose-body" rows="6" required></textarea></label>
+          <button type="submit">Send Email</button>
+        </form>
+        <p id="compose-message" class="message" role="status"></p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
